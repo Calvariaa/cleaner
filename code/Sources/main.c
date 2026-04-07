@@ -69,6 +69,7 @@ void SYS_Init(void)
     PORT1_Init();                       //P1口初始化
     PORT3_Init();                       //P3口初始化
     PORT5_Init();                       //P5口初始化
+    CLK_Init();                         //时钟模块初始化
     ADC_Init();                         //ADC初始化
     PWMB_Init();                        //高级PWMB初始化
     delay_ms(1);

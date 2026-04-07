@@ -270,12 +270,12 @@
 		<PortIE_1>0</PortIE_1>
 		<PortWK_1>0</PortWK_1>
 		<PortLevel_1>1</PortLevel_1>
-		<PortMD_2>0</PortMD_2>
+		<PortMD_2>2</PortMD_2>
 		<PortPU_2>0</PortPU_2>
-		<PortNCS_2>0</PortNCS_2>
+		<PortNCS_2>1</PortNCS_2>
 		<PortSR_2>1</PortSR_2>
 		<PortDR_2>1</PortDR_2>
-		<PortAD_2>1</PortAD_2>
+		<PortAD_2>0</PortAD_2>
 		<PortIE_2>0</PortIE_2>
 		<PortWK_2>0</PortWK_2>
 		<PortLevel_2>1</PortLevel_2>
@@ -630,7 +630,7 @@
 		<PortLevel_7>1</PortLevel_7>
 	</PORT7>
 	<CLOCK>
-		<PeriEnable>0</PeriEnable>
+		<PeriEnable>1</PeriEnable>
 		<EnableHIRC>1</EnableHIRC>
 		<HIRCFrequency>24000000</HIRCFrequency>
 		<HIRCSource>1</HIRCSource>
@@ -641,7 +641,7 @@
 		<XOSCGain>0</XOSCGain>
 		<EnableLIRC>0</EnableLIRC>
 		<EnableX32K>0</EnableX32K>
-		<EnableIRC48M>0</EnableIRC48M>
+		<EnableIRC48M>1</EnableIRC48M>
 		<EnablePLL>0</EnablePLL>
 		<PLLClockSource>0</PLLClockSource>
 		<PLLClockInDivider>1</PLLClockInDivider>
@@ -1247,7 +1247,7 @@
 		<ProcessMode>0</ProcessMode>
 		<EnableUPDISP>1</EnableUPDISP>
 		<WaitConfiged>0</WaitConfiged>
-		<LinkPrintf>0</LinkPrintf>
+		<LinkPrintf>1</LinkPrintf>
 		<ISPCommand>@STCISP#</ISPCommand>
 		<EnableInt>1</EnableInt>
 		<IntPriority>0</IntPriority>

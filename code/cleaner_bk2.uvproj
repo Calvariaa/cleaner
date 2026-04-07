@@ -357,11 +357,6 @@
 							<FilePath>.\Sources\port.c</FilePath>
 						</File>
 						<File>
-							<FileName>clock.c</FileName>
-							<FileType>1</FileType>
-							<FilePath>.\Sources\clock.c</FilePath>
-						</File>
-						<File>
 							<FileName>adc.c</FileName>
 							<FileType>1</FileType>
 							<FilePath>.\Sources\adc.c</FilePath>

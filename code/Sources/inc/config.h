@@ -23,6 +23,8 @@
 #define SYSCLK                  FOSC
 #define MAIN_Fosc               FOSC
 
+#define PRINTF_USB                      //printf输出重定向到USB口
+
 #include <stc8h.h>
 #include <stdio.h>
 #include <string.h>
@@ -41,6 +43,7 @@
 
 
 #include "port.h"
+#include "clock.h"
 #include "adc.h"
 #include "pwm.h"
 #include "usblib.h"
