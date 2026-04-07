@@ -4,6 +4,7 @@
             "name": "cleaner",
             "includePath": [
                 "c:\\Users\\Calvaria\\Documents\\Code\\stc\\cleaner\\code\\Sources\\inc",
+                "D:\\Keil_v5\\C51\\INC",
                 "c:\\Users\\Calvaria\\Documents\\Code\\stc\\cleaner\\code\\Sources",
                 "c:\\Users\\Calvaria\\Documents\\Code\\stc\\cleaner\\code\\Sources\\lib"
             ],

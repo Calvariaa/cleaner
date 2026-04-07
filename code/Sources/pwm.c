@@ -32,21 +32,22 @@
 void PWMB_Init(void)
 {
 #define PWMB_CLOCK              SYSCLK
-#define PWMB_PSCR               (0)
-#define PWMB_RELOAD             ((float)PWMB_CLOCK / (PWMB_PSCR + 1) / 1000 - 1)
+#define PWMB_PSCR_VAL           (0)
+#define PWMB_RELOAD             ((float)PWMB_CLOCK / (PWMB_PSCR_VAL + 1) / 1000 - 1)
 
 
     PWMB_InternalClockMode();           //选择内部时钟模式
     PWMB_SetCounter(0);                 //初始化计数值
-    PWMB_SetClockDivider(PWMB_PSCR);    //设置16位预分频
+    PWMB_SetClockDivider(PWMB_PSCR_VAL);//设置16位预分频
     PWMB_SetReload16(PWMB_RELOAD);      //设置16位重载值
 
     PWMB_Run();                         //PWMB开始运行
 
     //<<AICUBE_USER_PWM1_INITIAL_BEGIN>>
     // 在此添加用户初始化代码
-    PWMB_CH6_PWMMode(PWM_MODE1);        //PWM6通道设置为PWM模式1
-    PWMB_CH6_OutputEnable();            //使能PWM6输出
+    PWMB_OC6REFPWMMode1();              //PWM6通道设置为PWM模式1
+    PWMB_CC6PEnable();                  //使能PWM6输出
+    PWMB_CC6PNonInverted();             //PWM6非反向
     PWMB_SetCCR6Value(0);               //初始占空比为0
     //<<AICUBE_USER_PWM1_INITIAL_END>>
 }
