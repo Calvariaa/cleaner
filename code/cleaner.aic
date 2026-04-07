@@ -6,7 +6,7 @@
 		<McuPackage>34624</McuPackage>
 		<ProjectName>cleaner</ProjectName>
 		<ProjectType>1</ProjectType>
-		<Encoding>0</Encoding>
+		<Encoding>1</Encoding>
 		<PortInitStatus>1</PortInitStatus>
 		<AliasSortMode>0</AliasSortMode>
 	</Target>

@@ -1,7 +1,7 @@
 //<<AICUBE_USER_HEADER_REMARK_BEGIN>>
 ////////////////////////////////////////
-// �ڴ������û��ļ�ͷ˵����Ϣ  
-// �ļ�����: config.h
+// 在此添加用户文件头说明信息  
+// 文件名称: config.h
 ////////////////////////////////////////
 //<<AICUBE_USER_HEADER_REMARK_END>>
 
@@ -11,11 +11,11 @@
 
 
 //<<AICUBE_USER_DEFINE_BEGIN>>
-// �ڴ������û��궨��  
+// 在此添加用户宏定义  
 //<<AICUBE_USER_DEFINE_END>>
 
 
-#define __ENCODING              "GB2312" //DO NOT DELETE or MODIFY
+#define __ENCODING              "UTF-8" //DO NOT DELETE or MODIFY
 
 
 #define HIRC                    24000000UL
@@ -23,7 +23,7 @@
 #define SYSCLK                  FOSC
 #define MAIN_Fosc               FOSC
 
-#define PRINTF_USB                      //printf����ض���USB��
+#define PRINTF_USB                      //printf输出重定向到USB口
 
 #include <stc8h.h>
 #include <stdio.h>
@@ -38,7 +38,7 @@
 
 
 //<<AICUBE_USER_INCLUDE_BEGIN>>
-// �ڴ������û�ͷ�ļ�����  
+// 在此添加用户头文件包含  
 //<<AICUBE_USER_INCLUDE_END>>
 
 
@@ -55,7 +55,7 @@ void delay_ms(uint16_t ms);
 
 
 //<<AICUBE_USER_EXTERNAL_DECLARE_BEGIN>>
-// �ڴ������û��ⲿ�������ⲿ��������  
+// 在此添加用户外部函数和外部变量声明  
 //<<AICUBE_USER_EXTERNAL_DECLARE_END>>
 
 

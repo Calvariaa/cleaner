@@ -1,11 +1,11 @@
 //<<AICUBE_USER_HEADER_REMARK_BEGIN>>
 ////////////////////////////////////////
-// �ڴ������û��ļ�ͷ˵����Ϣ  
-// �ļ�����: port.c
-// �ļ�����: 
-// �ļ��汾: V1.0
-// �޸ļ�¼:
-//   1. (2026-03-18) �����ļ�
+// 在此添加用户文件头说明信息  
+// 文件名称: port.c
+// 文件描述: 
+// 文件版本: V1.0
+// 修改记录:
+//   1. (2026-04-07) 创建文件
 ////////////////////////////////////////
 //<<AICUBE_USER_HEADER_REMARK_END>>
 
@@ -14,110 +14,110 @@
 
 
 //<<AICUBE_USER_INCLUDE_BEGIN>>
-// �ڴ������û�ͷ�ļ�����  
+// 在此添加用户头文件包含  
 //<<AICUBE_USER_INCLUDE_END>>
 
 
 //<<AICUBE_USER_GLOBAL_DEFINE_BEGIN>>
-// �ڴ������û�ȫ�ֱ������塢�û��궨���Լ���������  
+// 在此添加用户全局变量定义、用户宏定义以及函数声明  
 //<<AICUBE_USER_GLOBAL_DEFINE_END>>
 
 
 
 ////////////////////////////////////////
-// P0�ڳ�ʼ������
-// ��ڲ���: ��
-// ��������: ��
+// P0口初始化函数
+// 入口参数: 无
+// 函数返回: 无
 ////////////////////////////////////////
 void PORT0_Init(void)
 {
-    SetP0nInitLevelHigh(PIN_ALL);       //����P0��ʼ����ƽ
-    SetP0nQuasiMode(PIN_ALL);           //����P0Ϊ׼˫���ģʽ
+    SetP0nInitLevelHigh(PIN_ALL);       //设置P0初始化电平
+    SetP0nQuasiMode(PIN_ALL);           //设置P0为准双向口模式
 
-    DisableP0nPullUp(PIN_ALL);          //�ر�P0�ڲ���������
-    EnableP0nSchmitt(PIN_ALL);          //ʹ��P0ʩ���ش���
-    SetP0nSlewRateNormal(PIN_ALL);      //����P0һ�㷭ת�ٶ�
-    SetP0nDrivingNormal(PIN_ALL);       //����P0һ����������
-    SetP0nDigitalInput(PIN_ALL);        //ʹ��P0�����ź����빦��
+    DisableP0nPullUp(PIN_ALL);          //关闭P0内部上拉电阻
+    EnableP0nSchmitt(PIN_ALL);          //使能P0施密特触发
+    SetP0nSlewRateNormal(PIN_ALL);      //设置P0一般翻转速度
+    SetP0nDrivingNormal(PIN_ALL);       //设置P0一般驱动能力
+    SetP0nDigitalInput(PIN_ALL);        //使能P0数字信号输入功能
 
     //<<AICUBE_USER_PORT0_INITIAL_BEGIN>>
-    // �ڴ������û���ʼ������  
+    // 在此添加用户初始化代码  
     //<<AICUBE_USER_PORT0_INITIAL_END>>
 }
 
 ////////////////////////////////////////
-// P1�ڳ�ʼ������
-// ��ڲ���: ��
-// ��������: ��
+// P1口初始化函数
+// 入口参数: 无
+// 函数返回: 无
 ////////////////////////////////////////
 void PORT1_Init(void)
 {
-    SetP1nInitLevelHigh(PIN_ALL);       //����P1��ʼ����ƽ
-    SetP1nQuasiMode(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_3 | PIN_2); //����P1.7,P1.6,P1.5,P1.4,P1.3,P1.2Ϊ׼˫���ģʽ
-    SetP1nHighZInputMode(PIN_1 | PIN_0); //����P1.1,P1.0Ϊ��������ģʽ
+    SetP1nInitLevelHigh(PIN_ALL);       //设置P1初始化电平
+    SetP1nQuasiMode(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_3 | PIN_2); //设置P1.7,P1.6,P1.5,P1.4,P1.3,P1.2为准双向口模式
+    SetP1nHighZInputMode(PIN_1 | PIN_0); //设置P1.1,P1.0为高阻输入模式
 
-    DisableP1nPullUp(PIN_ALL);          //�ر�P1�ڲ���������
-    DisableP1nSchmitt(PIN_0);           //�ر�P1.0ʩ���ش���
-    EnableP1nSchmitt(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_3 | PIN_2 | PIN_1); //ʹ��P1.7,P1.6,P1.5,P1.4,P1.3,P1.2,P1.1ʩ���ش���
-    SetP1nSlewRateNormal(PIN_ALL);      //����P1һ�㷭ת�ٶ�
-    SetP1nDrivingNormal(PIN_ALL);       //����P1һ����������
-    SetP1nDigitalInput(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_3 | PIN_2 | PIN_1); //ʹ��P1.7,P1.6,P1.5,P1.4,P1.3,P1.2,P1.1�����ź����빦��
-    SetP1nAnalogInput(PIN_0);           //ʹ��P1.0ģ���ź����빦��
+    DisableP1nPullUp(PIN_ALL);          //关闭P1内部上拉电阻
+    DisableP1nSchmitt(PIN_0);           //关闭P1.0施密特触发
+    EnableP1nSchmitt(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_3 | PIN_2 | PIN_1); //使能P1.7,P1.6,P1.5,P1.4,P1.3,P1.2,P1.1施密特触发
+    SetP1nSlewRateNormal(PIN_ALL);      //设置P1一般翻转速度
+    SetP1nDrivingNormal(PIN_ALL);       //设置P1一般驱动能力
+    SetP1nDigitalInput(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_3 | PIN_2 | PIN_1); //使能P1.7,P1.6,P1.5,P1.4,P1.3,P1.2,P1.1数字信号输入功能
+    SetP1nAnalogInput(PIN_0);           //使能P1.0模拟信号输入功能
 
     //<<AICUBE_USER_PORT1_INITIAL_BEGIN>>
-    // �ڴ������û���ʼ������  
+    // 在此添加用户初始化代码  
     //<<AICUBE_USER_PORT1_INITIAL_END>>
 }
 
 ////////////////////////////////////////
-// P3�ڳ�ʼ������
-// ��ڲ���: ��
-// ��������: ��
+// P3口初始化函数
+// 入口参数: 无
+// 函数返回: 无
 ////////////////////////////////////////
 void PORT3_Init(void)
 {
-    SetP3nInitLevelHigh(PIN_ALL);       //����P3��ʼ����ƽ
-    SetP3nQuasiMode(PIN_7 | PIN_6 | PIN_5 | PIN_4); //����P3.7,P3.6,P3.5,P3.4Ϊ׼˫���ģʽ
-    SetP3nHighZInputMode(PIN_3 | PIN_2 | PIN_1 | PIN_0); //����P3.3,P3.2,P3.1,P3.0Ϊ��������ģʽ
+    SetP3nInitLevelHigh(PIN_ALL);       //设置P3初始化电平
+    SetP3nQuasiMode(PIN_7 | PIN_6 | PIN_5 | PIN_4); //设置P3.7,P3.6,P3.5,P3.4为准双向口模式
+    SetP3nHighZInputMode(PIN_3 | PIN_2 | PIN_1 | PIN_0); //设置P3.3,P3.2,P3.1,P3.0为高阻输入模式
 
-    DisableP3nPullUp(PIN_ALL);          //�ر�P3�ڲ���������
-    DisableP3nSchmitt(PIN_3 | PIN_2);   //�ر�P3.3,P3.2ʩ���ش���
-    EnableP3nSchmitt(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_1 | PIN_0); //ʹ��P3.7,P3.6,P3.5,P3.4,P3.1,P3.0ʩ���ش���
-    SetP3nSlewRateNormal(PIN_ALL);      //����P3һ�㷭ת�ٶ�
-    SetP3nDrivingNormal(PIN_ALL);       //����P3һ����������
-    SetP3nDigitalInput(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_1 | PIN_0); //ʹ��P3.7,P3.6,P3.5,P3.4,P3.1,P3.0�����ź����빦��
-    SetP3nAnalogInput(PIN_3 | PIN_2);   //ʹ��P3.3,P3.2ģ���ź����빦��
+    DisableP3nPullUp(PIN_ALL);          //关闭P3内部上拉电阻
+    DisableP3nSchmitt(PIN_3 | PIN_2);   //关闭P3.3,P3.2施密特触发
+    EnableP3nSchmitt(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_1 | PIN_0); //使能P3.7,P3.6,P3.5,P3.4,P3.1,P3.0施密特触发
+    SetP3nSlewRateNormal(PIN_ALL);      //设置P3一般翻转速度
+    SetP3nDrivingNormal(PIN_ALL);       //设置P3一般驱动能力
+    SetP3nDigitalInput(PIN_7 | PIN_6 | PIN_5 | PIN_4 | PIN_1 | PIN_0); //使能P3.7,P3.6,P3.5,P3.4,P3.1,P3.0数字信号输入功能
+    SetP3nAnalogInput(PIN_3 | PIN_2);   //使能P3.3,P3.2模拟信号输入功能
 
     //<<AICUBE_USER_PORT3_INITIAL_BEGIN>>
-    // �ڴ������û���ʼ������  
+    // 在此添加用户初始化代码  
     //<<AICUBE_USER_PORT3_INITIAL_END>>
 }
 
 ////////////////////////////////////////
-// P5�ڳ�ʼ������
-// ��ڲ���: ��
-// ��������: ��
+// P5口初始化函数
+// 入口参数: 无
+// 函数返回: 无
 ////////////////////////////////////////
 void PORT5_Init(void)
 {
-    SetP5nInitLevelHigh(PIN_ALL);       //����P5��ʼ����ƽ
-    SetP5nQuasiMode(PIN_ALL);           //����P5Ϊ׼˫���ģʽ
+    SetP5nInitLevelHigh(PIN_ALL);       //设置P5初始化电平
+    SetP5nQuasiMode(PIN_ALL);           //设置P5为准双向口模式
 
-    DisableP5nPullUp(PIN_ALL);          //�ر�P5�ڲ���������
-    EnableP5nSchmitt(PIN_ALL);          //ʹ��P5ʩ���ش���
-    SetP5nSlewRateNormal(PIN_ALL);      //����P5һ�㷭ת�ٶ�
-    SetP5nDrivingNormal(PIN_ALL);       //����P5һ����������
-    SetP5nDigitalInput(PIN_ALL);        //ʹ��P5�����ź����빦��
+    DisableP5nPullUp(PIN_ALL);          //关闭P5内部上拉电阻
+    EnableP5nSchmitt(PIN_ALL);          //使能P5施密特触发
+    SetP5nSlewRateNormal(PIN_ALL);      //设置P5一般翻转速度
+    SetP5nDrivingNormal(PIN_ALL);       //设置P5一般驱动能力
+    SetP5nDigitalInput(PIN_ALL);        //使能P5数字信号输入功能
 
     //<<AICUBE_USER_PORT5_INITIAL_BEGIN>>
-    // �ڴ������û���ʼ������  
+    // 在此添加用户初始化代码  
     //<<AICUBE_USER_PORT5_INITIAL_END>>
 }
 
 
 
 //<<AICUBE_USER_FUNCTION_IMPLEMENT_BEGIN>>
-// �ڴ������û�����ʵ�ִ���  
+// 在此添加用户函数实现代码  
 //<<AICUBE_USER_FUNCTION_IMPLEMENT_END>>
 
 

@@ -1,11 +1,11 @@
 //<<AICUBE_USER_HEADER_REMARK_BEGIN>>
 ////////////////////////////////////////
-// �ڴ������û��ļ�ͷ˵����Ϣ  
-// �ļ�����: clock.c
-// �ļ�����: 
-// �ļ��汾: V1.0
-// �޸ļ�¼:
-//   1. (2026-04-07) �����ļ�
+// 在此添加用户文件头说明信息  
+// 文件名称: clock.c
+// 文件描述: 
+// 文件版本: V1.0
+// 修改记录:
+//   1. (2026-04-07) 创建文件
 ////////////////////////////////////////
 //<<AICUBE_USER_HEADER_REMARK_END>>
 
@@ -14,44 +14,44 @@
 
 
 //<<AICUBE_USER_INCLUDE_BEGIN>>
-// �ڴ������û�ͷ�ļ�����  
+// 在此添加用户头文件包含  
 //<<AICUBE_USER_INCLUDE_END>>
 
 
 //<<AICUBE_USER_GLOBAL_DEFINE_BEGIN>>
-// �ڴ������û�ȫ�ֱ������塢�û��궨���Լ���������  
+// 在此添加用户全局变量定义、用户宏定义以及函数声明  
 //<<AICUBE_USER_GLOBAL_DEFINE_END>>
 
 
 
 ////////////////////////////////////////
-// ʱ�ӳ�ʼ������
-// ��ڲ���: ��
-// ��������: ��
+// 时钟初始化函数
+// 入口参数: 无
+// 函数返回: 无
 ////////////////////////////////////////
 void CLK_Init(void)
 {
-    CLK_IRC48M_Enable();                //�����ڲ�48M����IRC
-    CLK_IRC48M_WaitStable();            //�ȴ������ȶ�
+    CLK_IRC48M_Enable();                //启动内部48M高速IRC
+    CLK_IRC48M_WaitStable();            //等待振荡器稳定
 
-    CLK_SYSCLK_Divider(10);             //�л���ʱ��ǰ�Ƚ�ϵͳʱ�ӽ�Ƶ
+    CLK_SYSCLK_Divider(10);             //切换主时钟前先将系统时钟降频
 
-    HIRC_24M();                         //ѡ���ڲ�Ԥ�õ�Ƶ��
+    HIRC_24M();                         //选择内部预置的频率
 
-    CLK_MCLK_HIRC();                    //ѡ���ڲ��߾���HIRC��Ϊ��ʱ��
-    CLK_MCLK2_BYPASS();                 //��·MCLK2,ֱ��ʹ��MCLKѡ��
+    CLK_MCLK_HIRC();                    //选择内部高精度HIRC作为主时钟
+    CLK_MCLK2_BYPASS();                 //旁路MCLK2,直接使用MCLK选择
 
-    CLK_SYSCLK_Divider(1);              //����ϵͳʱ�ӷ�Ƶϵ��
+    CLK_SYSCLK_Divider(1);              //设置系统时钟分频系数
 
     //<<AICUBE_USER_CLOCK_INITIAL_BEGIN>>
-    // �ڴ������û���ʼ������  
+    // 在此添加用户初始化代码  
     //<<AICUBE_USER_CLOCK_INITIAL_END>>
 }
 
 
 
 //<<AICUBE_USER_FUNCTION_IMPLEMENT_BEGIN>>
-// �ڴ������û�����ʵ�ִ���  
+// 在此添加用户函数实现代码  
 //<<AICUBE_USER_FUNCTION_IMPLEMENT_END>>
 
 
