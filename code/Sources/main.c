@@ -18,6 +18,8 @@
 //<<AICUBE_USER_GLOBAL_DEFINE_BEGIN>>
 // 在此添加用户全局变量定义、用户宏定义以及函数声明
 uint16_t adc_value = 0;
+uint16_t pwm_duty = 0;
+uint16_t pwm_max = 0;
 //<<AICUBE_USER_GLOBAL_DEFINE_END>>
 
 ////////////////////////////////////////
@@ -35,6 +37,7 @@ void main(void)
 
     //<<AICUBE_USER_MAIN_CODE_BEGIN>>
     // 在此添加主函数中运行一次的用户代码
+    pwm_max = (uint16_t)((float)SYSCLK / 1000 - 1);
     //<<AICUBE_USER_MAIN_CODE_END>>
 
     while (1)
@@ -44,7 +47,9 @@ void main(void)
         //<<AICUBE_USER_MAIN_LOOP_BEGIN>>
         // 在此添加主函数中用户主循环代码
         adc_value = ADC_Convert(1);
-        printf("ADC1 = %d\n", adc_value);
+        pwm_duty = (uint32_t)adc_value * pwm_max / 4095;
+        PWM_UpdateDuty(PWMB_CH6, pwm_duty);
+        printf("ADC1 = %d, PWM = %d%%\n", adc_value, (uint16_t)((uint32_t)adc_value * 100 / 4095));
         delay_ms(1);
         //<<AICUBE_USER_MAIN_LOOP_END>>
     }

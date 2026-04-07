@@ -33,7 +33,7 @@ void PWMB_Init(void)
 {
 #define PWMB_CLOCK              SYSCLK
 #define PWMB_PSCR               (0)
-#define PWMB_RELOAD             ((float)PWMB_CLOCK / (PWMB_PSCR + 1) * 100 / 1000000 - 1)
+#define PWMB_RELOAD             ((float)PWMB_CLOCK / (PWMB_PSCR + 1) / 1000 - 1)
 
 
     PWMB_InternalClockMode();           //选择内部时钟模式
@@ -44,7 +44,10 @@ void PWMB_Init(void)
     PWMB_Run();                         //PWMB开始运行
 
     //<<AICUBE_USER_PWM1_INITIAL_BEGIN>>
-    // 在此添加用户初始化代码  
+    // 在此添加用户初始化代码
+    PWMB_CH6_PWMMode(PWM_MODE1);        //PWM6通道设置为PWM模式1
+    PWMB_CH6_OutputEnable();            //使能PWM6输出
+    PWMB_SetCCR6Value(0);               //初始占空比为0
     //<<AICUBE_USER_PWM1_INITIAL_END>>
 }
 
