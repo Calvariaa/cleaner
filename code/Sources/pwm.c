@@ -31,15 +31,24 @@
 ////////////////////////////////////////
 void PWMB_Init(void)
 {
-#define PWMB_CLOCK              SYSCLK
-#define PWMB_PSCR_VAL           (0)
-#define PWMB_RELOAD             ((float)PWMB_CLOCK / (PWMB_PSCR_VAL + 1) / 1000 - 1)
-
+    PWMB_C6SwitchP54();                 //设置PWMB通道6数据端口: PWM6 (P5.4)
 
     PWMB_InternalClockMode();           //选择内部时钟模式
+    PWMB_SetClockDivider(0);            //设置16位预分频
+    PWMB_SetReload16(41536);            //设置16位重载值
+    PWMB_BufferARR();                   //使能重载值寄存器预装载功能
     PWMB_SetCounter(0);                 //初始化计数值
-    PWMB_SetClockDivider(PWMB_PSCR_VAL);//设置16位预分频
-    PWMB_SetReload16(PWMB_RELOAD);      //设置16位重载值
+
+    PWMB_CC6PDisable();                 //关闭通道
+    PWMB_CC6Output();                   //使能通道输出功能
+    PWMB_CC6PEnable();                  //打开通道
+    PWM_UpdateDuty(PWMB_CH6, 0);        //设置通道的PWM占空比
+    PWMB_OC6REFPWMMode1();              //设置通道输出参考信号为PWM模式1信号
+    PWMB_BufferCCR6();                  //使能CCRn预装载功能
+    PWMB_CC6PNonInverted();             //设置正极通道输出高电平有效
+    PWMB_EnablePWM6POutput();           //使能正极通道输出
+
+    PWMB_EnableMainOutput();            //使能PWM主输出
 
     PWMB_Run();                         //PWMB开始运行
 
